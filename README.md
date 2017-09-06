@@ -8,21 +8,21 @@ Event for global digital leaders in Moscow
 
 ## After repository clone
 
-### For first local deployment
+### First local deployment
 Go to your local repository folder from node command promt and
 ```terminal
 npm install
 gulp serve
 ```
 
-### For edit local
+### Edit local
 Run gulp with watch your changes and update browser view 
 ```terminal
 gulp serve
 ```
 Enjoy! Your app files folder `/app/`
 
-### For publishing build
+### Build and publish
 ```terminal
 gulp build
 ```
