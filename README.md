@@ -2,9 +2,9 @@
 Event for global digital leaders in Moscow
 
 ## Must have for this app
-• node.js [install](https://nodejs.org/en/download/)
-• ruby (for sass) [install](https://www.ruby-lang.org/en/downloads/)
-• gulp [install](https://www.npmjs.com/package/gulp)
+* node.js [install](https://nodejs.org/en/download/)
+* ruby (for sass) [install](https://www.ruby-lang.org/en/downloads/)
+* gulp [install](https://www.npmjs.com/package/gulp)
 
 ## After repository clone
 
