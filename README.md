@@ -1,13 +1,29 @@
-# All Leaders promo
+# All Leaders promo :rocket:
 Event for global digital leaders in Moscow
 
-## must have for this app
+## Must have for this app
 • node.js [install](https://nodejs.org/en/download/)
-• ruby [install](https://www.ruby-lang.org/en/downloads/)
+• ruby (for sass) [install](https://www.ruby-lang.org/en/downloads/)
 • gulp [install](https://www.npmjs.com/package/gulp)
 
-## after repository clone
+## After repository clone
 
+### For first local deployment
+Go to your local repository folder from node command promt and
 ```terminal
 npm install
 gulp serve
+```
+
+### For edit local
+Run gulp with watch your changes and update browser view 
+```terminal
+gulp serve
+```
+Enjoy! Your app files folder `/app/`
+
+### For publishing build
+```terminal
+gulp build
+```
+Your build destination folder `/dist/`
