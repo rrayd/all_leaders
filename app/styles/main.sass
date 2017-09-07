@@ -7,17 +7,104 @@
   color: #000
   padding: 0.2em 0
 
-
 // all leaders color cheme
-
 $al-red: #ea0007
 
+// all leaders font-size cheme
+$f-size: 18px
+$f-size-bigest: 161%
+$f-size-big: 138%
+$f-size-normal: 100%
+$f-size-small: 61%
+$f-size-smallest: 38%
 
-// all leaders styles
+//
+// all leaders main styles
 
 body
   margin: 0
   padding: 0
-  background-color: $al-red
+  background-color: #fff
   font-family: 'Roboto', sans-serif
+  font-size: $f-size
   color: #fff
+
+// ui atoms
+.al-button-red
+  display: inline-block
+  text-decoration: none
+  margin: 0
+  padding: 14px 22px
+  color: #fff
+  background-color: $al-red
+  font-size: $f-size-normal
+  font-weight: 300
+  +border-radius(2px)
+
+// first block
+header
+  position: relative
+  width: 100%
+  height: 100%
+.al-bg-video-container
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  overflow: hidden
+  z-index: -9999
+  video
+    min-width: 100%
+    min-height: 100%
+    width: auto
+    height: auto
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+.al-header-text
+  position: absolute
+  top: 27px
+  left: 5%
+  margin: 0
+  padding: 0
+  width: 420px
+  line-height: 48px
+.al-header-line:first-child
+  font-weight: 900
+.al-header-line
+  display: inline-block
+  width: 100%
+  font-weight: 300
+  text-align: right
+  .al-small-text
+    font-size: $f-size-small
+.al-logo
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  overflow: hidden
+  background: url('../images/logo.svg') no-repeat center 38%
+  background-size: 39%
+  z-index: -9998
+.al-partners
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 146px
+  overflow: hidden
+  background: url('../images/al-partners.svg') no-repeat center center
+  background-size: 69%
+.go-reg-container
+  position: absolute
+  top: 61px
+  right: 5%
+.go-more-container
+  position: absolute
+  bottom: 20%
+  width: 100%
+  text-align: center
