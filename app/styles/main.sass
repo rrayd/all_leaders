@@ -42,7 +42,7 @@ body
   background-color: $al-red
   font-size: $f-size-normal
   font-weight: 300
-  +border-radius(2px)
+  +border-radius(4px)
 
 // first block
 header
@@ -50,6 +50,7 @@ header
   margin-bottom: 7%
   width: 100%
   height: 100%
+  z-index: 1
 .al-bg-video-container
   position: absolute
   top: 0
@@ -81,7 +82,6 @@ header
   display: inline-block
   width: 100%
   font-weight: 300
-  text-align: right
   .al-small-text
     font-size: $f-size-small
 .al-logo
@@ -94,6 +94,15 @@ header
   background: url('../images/logo.svg') no-repeat center 38%
   background-size: 39%
   z-index: -9998
+.al-logo-red
+  position: fixed
+  top: 45px
+  left: 0
+  width: 300px
+  height: 100px
+  overflow: hidden
+  background: url('../images/logo-red.svg') no-repeat center center
+  z-index: -10000
 .al-partners
   position: absolute
   bottom: 0
@@ -103,15 +112,16 @@ header
   overflow: hidden
   background: url('../images/al-partners.svg') no-repeat center center
   background-size: 69%
-.go-reg-container
-  position: absolute
-  top: 61px
-  right: 5%
 .go-more-container
   position: absolute
   bottom: 20%
   width: 100%
   text-align: center
+
+.go-reg-container
+  position: fixed
+  top: 61px
+  right: 5%
 
 // sections
 .al-section
@@ -120,10 +130,11 @@ header
   margin-bottom: 3%
   &.speakers
     padding: 0
+    margin: 0 auto
     text-align: center
+    max-width: 1500px
     h2
-      text-align: left
-      padding: $al-global-padding
+      text-align: center
   &.contacts
     background: url('../images/buddha-bar.jpg') no-repeat center center
     background-size: cover
@@ -133,6 +144,7 @@ header
   h2
     color: $al-red
     font-weight: 900
+    font-size: 180%
   strong
     color: $al-red
 .al-program-item
@@ -184,12 +196,17 @@ header
   font-size: 72%
 .al-video-item
   margin-bottom: 4%
-  background: url('data:image/gif;base64,R0lGODdhewB7AIAAAP///wAAACwAAAAAewB7AAAC/oSPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+hH0/g8M8nqKoG8YKBIfx4TxKdxAp0tAEwFFKpPMKpJq5ICzhusXqHV6GebyOCxdO9rWN/3MpdzZcst+QWf3F6XXx5eX8be1ZddAOKGohohxRVY3iVVVKZi3ielJGBkBiuaGmXaJB4YaqPmEmugKl3rIymn7KRtqWNj5aoor+ig5qFtKq0H6g4sHMZy5XGu6e1qh7BnM23xY7Dsr6mwcjUzdjT3Ney0rJn5+qex4DC/9Lq8toe69XV/Nn92fDxale9BUrZMkkJ8lcMDi9FuEblwrfcSoJIz3EB/B/n/umFWccpFeLE4HyZV0h7LdG3YkKZp0mRKmyjEsSXp8eTOmQZozJnaMaCnkDoyMSu58xnBoQ2g/Ff4q2DPdzJtUgdrjCTWZVG/UEjZdZXWWUEhbd1bF+bGcRYQOu3HcGjSs0K5tyy6Ny/Sp2aVFXY50e1dv2mN7kfUdq1EmV8LcGBsWyTdwxl45BQOyLEzORMSUJRfGiJTgZraPQYwuPS/rvqZkJ/vRbFTy6dWxO5uG7Vc27sOeB7pOrFMuac6FwfrzQPdl6Fy/nS7+5vjvyanDI895avzZ63H7iFs33hfwbe4RIY7Cjfdz9Q7LZ3dhnl745eY1sYvjfTx/S8si/rLf/0ibRPtpF4J/z+Gn1nMDfrAcUWHZRJqBKDRIz4AUOsdagY6JZ+GGM2U4XofklRbeLb3lV5+IzIVjYWUjSqeieaDt52JSLHK4VlbJBfQegRf4mM9pO1J3nVh1AfThbuWdGF9eLx7pk5IYYrbSkmiF6OGIQVKJ1ZD0AZelkCY6udBV3v0oZWYgWdkef9YxmKZoOSZY4pMkIhfnZAamdpRdI2ypWJOCjjlhkoG66dyMWBWqoJkPwhXdo0b+Gel5SB74nZyNfmmpjev945Wm6rFXKYsO6iflqU1uB6inV3rZ5qQw9mmnqv8pFyairBrqaky+5iqrbzyiiul8jUga/iWnCNonYLF1lrmolbPKByukXVbpJKPdZRrtlIJsawKf3IKHLLY+9ndrqN2qmG5Ua3prDqIgxrBnjs/66Sqj0JJLZqXzCjvmV7Ul9auyYH574lkET1crlOYODHFzBZewsJ4Mu3eljJ9as9GbEbaLWm1zdVxka6bqtuLHl546UnEXR6wxruuSbCt0h+YWcsrwZsmSyzerG3OrPDvks3n/JroeXvlWyKzRIg+m86hLz1e0ypwpjd7QpG4KNJtaA4ktulxzG6CYdh5L6dg5l51nvO+KbfJ7b2n59AsVnyzzhVPDnRjegDptcNoQZtx3uc3GrVVLZ/kdMMl7G+7ldrQmH4e3UpZfjnnmmm/Oeeeefw566KKPTnrppp+OeuqqFwAAOw==') no-repeat top left
-  &:last-child
-    background: url('data:image/gif;base64,R0lGODdhewB7AIAAAP///wAAACwAAAAAewB7AAAC/oSPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+hH0/g8M8oDDYKCo8EGUCaNTuHlKe0Um4IlsUh/W6hSq+WIN4PF1i+gy1GcxOMNuxLVSObEyX+Qne/pyavdj0ZeGBmfIhagHuHZHQZgVhmaWZ2XpdnlEpphZpjg46RSZFKrZhhnJ1ukImWhK+bn5WooqO2or62l6OGuUShtbKNg4vNiry7FanOm1S1zpSHrMGswHvFza/FcsDT2N7XyhzJwr6kp+GjyeHXWN/rX9Hu1XDp7szp7ue57/Rq+Pjpe1b/6E3QJors3Ae+ECNSv4K1wthRJaObC4jts//lVuDjpsh8keLook5fWKGLJaxZQmI7ocaZIlQ5kw+9k8WZNgxxkcJXLaaXDHo58+i8L7JzRCT2ndGAWV4e0hvqIHjyLc91QgMak6qY7kmrGgxY/GuJrdSBSWGKYeon6tF8jMWZJNNXZwSxfus4RzvUEESbanX771AtL5Ky5fXbmFiW7zmPODYWFW50J+inesq8sTLb8t+/nliKWRDzs2jbOkSn0iSKs2epryzcvaQrieLDbt7NCoJRPOC7zq6r7UGtr+7ZptVn7gJrdGHls5bdTKpkvCmlzv8quZi2tWmjA7a6SN7aK89hx7dO3C62zVjtg3y9R1a49/rfb7QJrB/uF7v5nfcBjMp1hv/onEHXpthacbfeUxhh+DxoGgVn2f8XeeehPKh4yBwGGYU4UnEPiNfXEB1RJ51/GnCyEs7rYdLy82t9qMolkHCmwlXqjga54ZE9+ADdp3W3EZuvgbQxbeVySCGcUzz13QIQjWlBOlSKGVBSaIVZUa3rhglwcu5pSXHfpIQnWlYfbfjtvhlR6RW6rJZJTi4Sikm7j12OJ6/f2ZI2cECiomkGUe56BsIREaJJf6rZSomRKeaB51SSIaKG+GJgohmRvmmSmgHgoWpadx4rElpe012mmepBbaXoZHxtbofg0i1qScXSlXK6Sv4korn1PxWqqrKLYJ/uyi5a0q4EUp6dqqo8jOWexQytbp3qZWiagoCs7xuJalXXHrbargVrbsg5Oq8O2HQBF37aOjHcolpcniyQK69e4F65o36Kuvl4E1a2u8l96Hb0wEozrfjyZqSqyb6c2Y7J3vRfjpdQuJK6uK7cIJKqSmhujnx+osDBp4OirsFZsTgpzYrmtGK15YUyqZLppXkRWruoXKO2tqT17cs7R2AU0ylZoi+fOtPeK8M7g881uzhEi7fCahUB7ttMSA5Zyrhx1raySmYAerY8SDfWl21O5yaufT4rarlcqPJZ1b2kS3fbezQtP76tRZZmwdy3kvKR2iNrK3mc8A+5nj4gg3Km40hBZbK3mvGIP4dlKefw566KKPTnrppp+Oeuqqr856666/Dnvssh9QAAA7') no-repeat top left
 .al-video-flow
-  margin-left: 128px
-  height: 640px
+  position: relative
+  width: 100%
+  height: 0
+  padding-bottom: 56.25%
+.al-video-2016
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
 .al-contacts-time
   color: $al-red
 .al-contacts-info
