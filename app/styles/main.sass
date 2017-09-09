@@ -8,15 +8,24 @@
   padding: 0.2em 0
 
 // platforms optimisation breakpoints
+$mobile-width: 720px;
 $desktop-width-small: 1280px;
 $desktop-width-big: 1440px;
 @mixin desktop-average
   @media (min-width: #{$desktop-width-small - 1}) and (max-width: #{$desktop-width-big - 1})
     @content
+@mixin mobile
+  @media (min-width: #{$mobile-width}) and  (max-width: #{$desktop-width-small - 1})
+    @content
+@mixin mobile-small
+  @media (max-width: #{$mobile-width})
+    @content
 
 // all leaders template vars
 $al-global-padding: 0 21% 0 21%
 $al-gp-desktop-average: 0 24% 0 24%
+$al-gp-mobile: 0 11% 0 11%
+$al-gp-mobile-small: 0 8% 0 8%
 
 // all leaders color cheme
 $al-red: #ea0007
@@ -51,6 +60,8 @@ body
   font-size: $f-size-normal
   font-weight: 300
   +border-radius(4px)
+  @include mobile
+    font-size: $f-size-big
 .al-nowrap
   white-space: nowrap
 
@@ -86,6 +97,9 @@ header
   padding: 0
   width: 420px
   line-height: 48px
+  @include mobile-small
+    font-size: $f-size-normal
+    line-height: inherit
 .al-header-line:first-child
   font-weight: 900
 .al-header-line
@@ -104,6 +118,12 @@ header
   background: url('../images/logo.svg') no-repeat center 38%
   background-size: 39%
   z-index: -9998
+  @include mobile
+    background-size: 89%
+    background-position-y: 50%
+  @include mobile-small
+    background-size: 89%
+    background-position-y: 30%
 .al-logo-red
   position: fixed
   top: 45px
@@ -122,16 +142,40 @@ header
   overflow: hidden
   background: url('../images/al-partners.svg') no-repeat center center
   background-size: 69%
+  @include mobile
+    background-size: 93%
+  @include mobile-small
+    background-size: 93%
+    height: 73px
 .go-more-container
   position: absolute
   bottom: 20%
   width: 100%
+  height: 84px
   text-align: center
+  .scroll-icon
+    position: absolute
+    left: 50%
+    margin-left: -32px
+    width: 64px
+    height: 64px
+    background: url('../images/scroll.svg') no-repeat center center
+    background-size: cover
+  .go-text
+    position: absolute
+    top: 76px
+    margin-left: -50px
+    width: 100px
+    color: #fff
+    font-size: $f-size-small
+
 
 .go-reg-container
   position: fixed
   top: 61px
   right: 5%
+  @include mobile-small
+    display: none
 
 // sections
 .al-section
@@ -140,6 +184,18 @@ header
   margin-bottom: 3%
   @include desktop-average
     padding: $al-gp-desktop-average
+  @include mobile
+    padding: $al-gp-mobile
+  @include mobile-small
+    padding: $al-gp-mobile-small
+  h2
+    color: $al-red
+    font-weight: 900
+    font-size: 180%
+    @include mobile
+      text-align: center
+  strong
+    color: $al-red
   &.speakers
     padding: 0
     margin: 0 auto
@@ -158,12 +214,19 @@ header
         height: 190px
         text-align: center
         background-position: bottom center
-  h2
-    color: $al-red
-    font-weight: 900
-    font-size: 180%
-  strong
-    color: $al-red
+  &.videos
+    @include desktop-average
+      padding: 0
+      h2
+        text-align: center
+    @include mobile
+      padding: 0
+      h2
+        text-align: center
+    @include mobile-small
+      padding: 0
+      h2
+        text-align: center
 .al-program-item
   padding-left: 4%
   margin-bottom: 24px
