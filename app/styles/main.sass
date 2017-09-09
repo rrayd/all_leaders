@@ -50,18 +50,22 @@ body
   color: #fff
 
 // ui atoms
-.al-button-red
+.al-button
   display: inline-block
   text-decoration: none
   margin: 0
   padding: 14px 22px
-  color: #fff
-  background-color: $al-red
   font-size: $f-size-normal
   font-weight: 300
   +border-radius(4px)
   @include mobile
     font-size: $f-size-big
+  &.red
+    color: #fff
+    background-color: $al-red
+  &.white
+    color: $al-red
+    background-color: #fff
 .al-nowrap
   white-space: nowrap
 
@@ -72,6 +76,24 @@ header
   width: 100%
   height: 100%
   z-index: 1
+.al-mobile-header
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 69px
+  background: $al-red url('../images/logo-white.svg') no-repeat 22px
+  background-size: 54%
+  z-index: -10000
+  @include mobile-small
+    display: block
+  .al-mobile-reg-button
+    position: absolute
+    right: 23px
+    top: 9px
+    .al-button
+      font-weight: 900
 .al-bg-video-container
   position: absolute
   top: 0
@@ -98,7 +120,7 @@ header
   width: 420px
   line-height: 48px
   @include mobile-small
-    font-size: $f-size-normal
+    font-size: 130%
     line-height: inherit
 .al-header-line:first-child
   font-weight: 900
@@ -133,6 +155,8 @@ header
   overflow: hidden
   background: url('../images/logo-red.svg') no-repeat center center
   z-index: -10000
+  @include mobile-small
+    display: none
 .al-partners
   position: absolute
   bottom: 0
@@ -207,10 +231,22 @@ header
     background: url('../images/buddha-bar.jpg') no-repeat center center
     background-size: cover
     font-size: 300%
+    @include mobile
+      font-size: $f-size-normal
+    @include mobile-small
+      font-size: $f-size-big
     h2
       background: url('../images/location.png') no-repeat center
       @include desktop-average
         margin-top: -57px
+        height: 190px
+        text-align: center
+        background-position: bottom center
+      @include mobile
+        height: 190px
+        text-align: center
+        background-position: bottom center
+      @include mobile-small
         height: 190px
         text-align: center
         background-position: bottom center
