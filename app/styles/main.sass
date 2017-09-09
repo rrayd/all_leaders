@@ -7,8 +7,16 @@
   color: #000
   padding: 0.2em 0
 
+// platforms optimisation breakpoints
+$desktop-width-small: 1280px;
+$desktop-width-big: 1440px;
+@mixin desktop-average
+  @media (min-width: #{$desktop-width-small - 1}) and (max-width: #{$desktop-width-big - 1})
+    @content
+
 // all leaders template vars
 $al-global-padding: 0 21% 0 21%
+$al-gp-desktop-average: 0 24% 0 24%
 
 // all leaders color cheme
 $al-red: #ea0007
@@ -130,6 +138,8 @@ header
   color: #000
   padding: $al-global-padding
   margin-bottom: 3%
+  @include desktop-average
+    padding: $al-gp-desktop-average
   &.speakers
     padding: 0
     margin: 0 auto
@@ -142,7 +152,12 @@ header
     background-size: cover
     font-size: 300%
     h2
-      background: url('../images/location.png') no-repeat bottom center
+      background: url('../images/location.png') no-repeat center
+      @include desktop-average
+        margin-top: -57px
+        height: 190px
+        text-align: center
+        background-position: bottom center
   h2
     color: $al-red
     font-weight: 900
