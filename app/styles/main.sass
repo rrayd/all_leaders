@@ -75,7 +75,6 @@ header
   margin-bottom: 7%
   width: 100%
   height: 100%
-  z-index: 1
 .al-mobile-header
   display: none
   position: fixed
@@ -85,7 +84,6 @@ header
   height: 69px
   background: $al-red url('../images/logo-white.svg') no-repeat 20px
   background-size: 29%
-  z-index: -10000
   @include mobile-small
     display: block
   .al-mobile-reg-button
@@ -101,7 +99,6 @@ header
   width: 100%
   height: 100%
   overflow: hidden
-  z-index: -9999
   video
     min-width: 100%
     min-height: 100%
@@ -140,7 +137,6 @@ header
   overflow: hidden
   background: url('../images/logo.svg') no-repeat center 38%
   background-size: 39%
-  z-index: -9998
   @include mobile
     background-size: 89%
     background-position-y: 50%
@@ -155,7 +151,6 @@ header
   height: 100px
   overflow: hidden
   background: url('../images/logo-red.svg') no-repeat center center
-  z-index: -10000
   @include mobile-small
     display: none
 .al-partners
@@ -233,7 +228,7 @@ header
     background-size: cover
     font-size: 300%
     @include mobile
-      font-size: $f-size-normal
+      font-size: $f-size-big
     @include mobile-small
       font-size: $f-size-big
     h2
