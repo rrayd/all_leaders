@@ -189,7 +189,6 @@ header
     color: #fff
     font-size: $f-size-small
 
-
 .go-reg-container
   position: fixed
   top: 61px
@@ -328,3 +327,35 @@ header
   display: inline-block  
   text-align: center
   width: 100%
+
+// reg form
+.al-invite
+  label.error
+    margin: 10px 0 0 4.5%
+    padding: 3% 0 3px 56px
+    background: url('../images/error-arrow.svg') no-repeat left top
+    background-size: 46px
+    color: $al-red
+    font-weight: 900
+  .agreement
+    display: none
+.al-input-container
+  margin-bottom: 2%
+  .al-button
+    &.submit
+      width: 100%
+      border: 0
+      font-size: 148%
+      cursor: pointer
+.al-input-text
+  padding: 3% 4%
+  width: 100%
+  box-sizing: border-box
+  font-size: $f-size-big
+  color: $al-red
+.al-check-container
+  font-size: 78%
+  color: #929292
+  margin-bottom: 16px
+  input[type=checkbox]
+    @include transform(scale(2))

@@ -144,13 +144,49 @@
       Moscow<br>
       Tsvetnoy bulvar, bl.2</span>
     </div>
-    <div class="al-section registration" id="registration"></div>
-
+    <div class="al-section registration" id="registration">
+      <h2>Get INVITE</h2>
+      <p>Зарегистрируйтесь и получите приглашение на мероприятие.<br>Поля, отмеченные звездочкой * обязательны.</p>
+      <form id="al-invite" method="post" class="al-invite">
+        <div class="al-input-container"><input name="name" type="text" class="al-input-text" id="name" placeholder="Имя*" required data-rule-minlength="3" data-msg-minlength="Минимум 3 символа" data-msg="Заполните поле"></div>
+        <div class="al-input-container"><input name="lastname" type="text" class="al-input-text" id="lastname" placeholder="Фамилия*" required data-rule-minlength="3" data-msg-minlength="Минимум 3 символа" required data-msg="Заполните поле"></div>
+        <div class="al-input-container"><input name="email" type="text" class="al-input-text" id="email" placeholder="Email*" required data-msg="Правильная запись вида name@domain"></div>
+        <div class="al-input-container"><input name="telephone" type="text" class="al-input-text" id="telephone" placeholder="Телефон для связи*" required data-msg="Заполните поле"></div>
+        <div class="al-input-container"><input name="company" type="text" class="al-input-text" id="company" placeholder="Компания*" data-rule-minlength="3" data-msg-minlength="Минимум 3 символа" required data-msg="Заполните поле"></div>
+        <div class="al-input-container"><input name="work" type="text" class="al-input-text" id="work" placeholder="Должность*" data-rule-minlength="3" data-msg-minlength="Минимум 3 символа" required data-msg="Заполните поле"></div>
+        <div class="al-input-container"><textarea name="message" class="al-input-text" id="message" placeholder="Дополнительная информация, если требуется"></textarea></div>
+        <div class="al-check-container">
+          <input name="agree_data" type="checkbox" id="id_agree_data">&nbsp;&nbsp;&nbsp;<label for="id_agree_data">Регистрируясь на это событие, вы подтверждаете ваше <a href="#" onclick="$('#personal-data-agreement').slideToggle(); return false;">согласие на обработку персональных данных</a></label>
+          <div id="personal-data-agreement" class="agreement">
+            <p>
+            Настоящим я, действуя свободно, своей волей и в своем интересе, даю свое согласие All In One Media (125009, Россия, Москва,Тверская улица, 9, строение 7, офис 315) и Группе Компаний на обработку предоставленных мною в форме регистрации персональных данных. При этом, под Группой Компаний понимается совокупность юридических лиц независимо от организационно-правовой формы, контролирующих All In One Media, контролируемых All In One Media или находящихся совместно с All In One Media под общим прямым или косвенным контролем.
+            </p>
+            <p>
+            Настоящее согласие дается мною для целей приглашения меня к участию и моего участия в мероприятиях, проводимых All In One Media и/или юридическими лицами, входящими в Группу компаний, а также для направления мне почтовых сообщений и смс-уведомлений от All In One Media и юридических лиц Группы Компаний, содержащих приглашения на мероприятия, а также рекламно-информационные материалы о сервисах и продуктах All In One Media и Группы Компаний.
+            </p>
+            <p>
+            Согласие предоставляется мною для осуществления любых действий в отношении моих персональных данных, включая без ограничений следующие действия: сбор, систематизацию, накопление, хранение, запись на электронные носители и их хранение, составление перечней, маркировка, уточнение (обновление, изменение), использование, распространение (в том числе передачу), обезличивание, блокирование, уничтожение, передачу персональных данных между All In One Media и юридическими лицами, входящими в Группу Компаний. 
+            </p>
+            <p>
+            Обработка персональных данных осуществляется All In One Media в объеме, который необходим для достижения каждой из вышеуказанных целей, в течение срока, составляющего 20 лет.
+            </p>
+            <p>
+            Согласие на обработку персональных данных может быть отозвано путем направления письменного уведомления в свободной форме All In One Media не менее чем за 1 месяц до момента отзыва согласия. 
+            </p>
+          </div>
+        </div>
+        <div class="al-check-container">
+          <input name="agree_media" id="id_agree_media" type="checkbox">&nbsp;&nbsp;&nbsp;<label for="id_agree_media">Настоящим я даю свое согласие All In One Media и Группе Компаний на воспроизведение, использование, распространение, доведение до всеобщего сведения, передачу в эфир и по кабелю своего изображения, содержащегося на видеозаписях и фотографиях, которые будут сделаны в ходе проведения мероприятий, проводимых All In One Media и Группой Компаний, на обработку указанных видеозаписей и фотографий.</label>
+        </div>
+        <div class="al-input-container"><input type="submit" class="al-button red submit" id="submit" value="Отправить заявку"/></div>
+      </form>
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
-    <script src="scripts/plugins.js"></script>
     <!-- endbuild -->
   </body>
 </html>

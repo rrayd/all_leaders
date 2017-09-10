@@ -1,30 +1,6 @@
-'use strict';
 $( document ).ready(function() {
-	
-	console.log( "ready!" );
-	
-	// al_app
-	function al_app () {
-
-		var al_header = document.getElementById('al-header');
-		var al_contacts = document.getElementById('contacts');
-
-		function header_height() {
-			al_header.style.height = window.innerHeight + 'px';
-			al_contacts.style.height = window.innerHeight - window.innerHeight/4 + 'px';
-			al_contacts.style.paddingTop = window.innerHeight/4 + 'px';
-		};
-		header_height();
-
-		function global_resize() {
-			header_height();
-		};
-		window.onresize = global_resize;
-
-	};
-
-	al_app();
-
+	// jquery functions
+	// smooth scrolling for anchors
 	$('a[href^="#"]').on('click', function(event) {
 		var target = $(this.getAttribute('href'));
 		if( target.length ) {
@@ -34,6 +10,52 @@ $( document ).ready(function() {
 			}, 1000);
 		}
 	});
+	// invite form masks
+	$('#telephone').mask("+9 (999) 999-99-99");
+	// invite form validate
+	 $('#al-invite').validate({
+		rules: {
+			"name": "required",
+			"lastname": "required",
+			"email": "email",
+			"telephone": "required",
+			"company": "required",
+			"work": "required"
+		},
+		submitHandler: function(form) {
+			console.log('sending form begin');
+			$.ajax({
+				type: "POST",
+				url: "al_invite.php",
+				data: $(form).serialize(),
+				timeout: 3000,
+				success: function() {alert('works');},
+				error: function() {alert('failed');}
+			});
+			return false;
+	  }
+	});
 
+	// vanilla functions
+	function al_app () {
+		// vanilla variables
+		var al_header = document.getElementById('al-header');
+		var al_contacts = document.getElementById('contacts');
 
+		// set sizes for design blocks
+		function sections_height() {
+			al_header.style.height = window.innerHeight + 'px';
+			al_contacts.style.height = window.innerHeight - window.innerHeight/4 + 'px';
+			al_contacts.style.paddingTop = window.innerHeight/4 + 'px';
+		};
+		sections_height();
+
+		// run all functions for resize event
+		function global_resize() {
+			sections_height();
+		};
+		window.onresize = global_resize;
+	};
+	// run vanilla app
+	al_app();
 });
