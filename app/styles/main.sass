@@ -77,6 +77,8 @@ body
   &.white
     color: $al-red
     background-color: #fff
+    &:hover
+      background-color: #000
 .al-nowrap
   white-space: nowrap
 
@@ -271,30 +273,51 @@ header
       @include mobile-small
         height: 150px
   &.social
+    position: relative
     padding: 5%
     background-color: #191919
     color: #fff
     margin-bottom: 0
     text-align: right
     font-weight: 300
-  &.al-email
-    margin-top: 10%
-    background-color: $al-red
-    margin-bottom: 0
-    &:hover
-      span
+    .al-email
+      position: absolute
+      top: 0
+      left: 0
+      width: 34%
+      height: 100%
+      padding-top: 5%
+      padding-left: 5%
+      box-sizing: border-box
+      background-color: $al-red
+      margin-bottom: 0
+      @include mobile
+        position: static
+        text-align: center
+        width: 100%
+        height: 130px
+        +border-radius(4px)
+        margin-bottom: 5%
+      @include mobile-small
+        position: static
+        text-align: center
+        width: 100%
+        height: 130px
+        +border-radius(4px)
+        margin-bottom: 5%
+      &:hover
+        span
+          text-decoration: none
+      .al-email-link
+        display: block
+        text-align: left
+        color: #fff
+        font-size: $f-size-bigest
         text-decoration: none
-    .al-email-link
-      display: block
-      padding: 18%
-      text-align: center
-      color: #fff
-      font-size: $f-size-bigest
-      text-decoration: none
-      font-size: 100%
-    span
-      font-size: 200%
-      text-decoration: underline
+        font-size: 100%
+      span
+        font-size: 200%
+        text-decoration: underline
   &.videos
     @include desktop-average
       padding: 0
