@@ -49,6 +49,7 @@ $( document ).ready(function() {
 			al_contacts.style.height = window.innerHeight - window.innerHeight/4 + 'px';
 			al_contacts.style.paddingTop = window.innerHeight/4 + 'px';
 			al_ios_background.style.height = window.innerHeight/2 + 'px';
+			al_ios_background.style.top = '-' + window.innerHeight/2 + 'px';
 		};
 		sections_height();
 
