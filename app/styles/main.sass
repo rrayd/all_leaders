@@ -1,4 +1,5 @@
 @import compass
+@import "compass/css3/transition"
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,900&amp;subset=cyrillic')
 
 .browserupgrade
@@ -64,13 +65,15 @@ body
   margin: 0
   padding: 14px 22px
   font-size: $f-size-normal
-  font-weight: 300
+  font-weight: 400
   +border-radius(4px)
   @include mobile
     font-size: $f-size-big
   &.red
     color: #fff
     background-color: $al-red
+    &:hover
+      background-color: #000
   &.white
     color: $al-red
     background-color: #fff
@@ -81,7 +84,6 @@ body
 header
   display: block
   position: relative
-  margin-top: -200px
   margin-bottom: 7%
   width: 100%
   min-height: 555px
@@ -251,6 +253,7 @@ header
     background: url('../images/buddha-bar.jpg') no-repeat center center
     background-size: cover
     font-size: 300%
+    margin-bottom: 0
     @include mobile
       font-size: $f-size-big
     @include mobile-small
@@ -267,15 +270,31 @@ header
         height: 150px
       @include mobile-small
         height: 150px
+  &.social
+    padding: 5%
+    background-color: #191919
+    color: #fff
+    margin-bottom: 0
+    text-align: right
+    font-weight: 300
   &.al-email
     margin-top: 10%
     background-color: $al-red
+    margin-bottom: 0
+    &:hover
+      span
+        text-decoration: none
     .al-email-link
       display: block
       padding: 18%
       text-align: center
       color: #fff
       font-size: $f-size-bigest
+      text-decoration: none
+      font-size: 100%
+    span
+      font-size: 200%
+      text-decoration: underline
   &.videos
     @include desktop-average
       padding: 0
