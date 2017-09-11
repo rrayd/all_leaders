@@ -11,6 +11,10 @@
 $mobile-width: 720px;
 $desktop-width-small: 1280px;
 $desktop-width-big: 1440px;
+$micro-height: 670px;
+@mixin micro-height
+  @media (max-height: #{$micro-height})
+    @content
 @mixin desktop-average
   @media (min-width: #{$desktop-width-small - 1}) and (max-width: #{$desktop-width-big - 1})
     @content
@@ -79,8 +83,11 @@ header
   position: relative
   margin-bottom: 7%
   width: 100%
+  min-height: 555px
   z-index: 1
   @include transform3d(translate3d(0, 0, 1, 500))
+  @include mobile
+    min-height: 880px
 .al-ios-background
   position: absolute
   width: 100%
@@ -149,9 +156,12 @@ header
   overflow: hidden
   background: url('../images/logo.svg') no-repeat center 38%
   background-size: 39%
+  @include micro-height
+    background-size: 37%
   @include mobile
     background-size: 89%
     background-position-y: 50%
+    min-height: 880px
   @include mobile-small
     background-size: 89%
     background-position-y: 30%
@@ -244,19 +254,16 @@ header
       font-size: $f-size-big
     h2
       background: url('../images/location.png') no-repeat center
+      height: 290px
+      text-align: center
+      background-position: bottom center
+      color: #fff
       @include desktop-average
         margin-top: -57px
-        height: 190px
-        text-align: center
-        background-position: bottom center
       @include mobile
-        height: 190px
-        text-align: center
-        background-position: bottom center
+        height: 150px
       @include mobile-small
-        height: 190px
-        text-align: center
-        background-position: bottom center
+        height: 150px
   &.al-email
     margin-top: 10%
     background-color: $al-red
@@ -357,28 +364,29 @@ header
     background: url('../images/error-arrow.svg') no-repeat left top
     background-size: 46px
     color: $al-red
-    font-weight: 900
+    font-weight: 400
+    font-size: $f-size-normal - 20
   .agreement
     display: none
 .al-input-container
   margin-bottom: 2%
   .al-button
+    font-weight: 300
     &.submit
       width: 100%
       border: 0
-      font-size: 148%
+      font-weight: 300
       cursor: pointer
 .al-input-text
   padding: 3% 4%
   width: 100%
   box-sizing: border-box
-  font-size: $f-size-big
   color: $al-red
+  font-size: $f-size-normal - 5
   &.al-input-textarea
     height: 120px
+    font-family: 'Roboto'
 .al-check-container
   font-size: 78%
   color: #929292
   margin-bottom: 16px
-  input[type=checkbox]
-    @include transform(scale(2))
