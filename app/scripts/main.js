@@ -48,7 +48,8 @@ $( document ).ready(function() {
 			al_header.style.height = window.innerHeight + 'px';
 			al_contacts.style.height = window.innerHeight - window.innerHeight/4 + 'px';
 			al_contacts.style.paddingTop = window.innerHeight/4 + 'px';
-			al_ios_background.style.height = window.innerHeight/2 + 'px';
+			al_ios_background.style.height = window.innerHeight/3 + 'px';
+			al_ios_background.style.top = '-' + window.innerHeight/3 + 'px';
 		};
 		sections_height();
 
