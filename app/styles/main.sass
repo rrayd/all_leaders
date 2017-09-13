@@ -47,6 +47,7 @@ $f-size-smallest: 38%
 // all leaders main styles
 
 body
+  height: 100%
   margin: 0
   padding: 0
   background-color: #fff
@@ -335,6 +336,32 @@ header
       padding: 0
       h2
         text-align: center
+  &.general-partner
+    position: relative
+    width: 100%
+    height: 50vh
+    margin: 0
+    padding: 0
+    @include mobile
+      background-size: 38%
+    @include mobile-small
+      background-size: 80%
+    h2
+      width: 100%
+      margin-top: 10%
+      font-size: $f-size-big
+      font-weight: 400
+      text-align: center
+      color: #000
+    .gp-link
+      position: absolute
+      width: 100%
+      height: 77%
+      background: url('../images/sostav-partner.svg') no-repeat center center
+      background-size: 40%
+      @include transition(0.3s all)
+      &:hover
+        margin-top: -20px
 .al-program-item
   padding-left: 4%
   margin-bottom: 24px
